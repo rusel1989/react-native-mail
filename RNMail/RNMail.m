@@ -1,7 +1,5 @@
 #import <MessageUI/MessageUI.h>
 #import "RNMail.h"
-#import "RCTConvert.h"
-#import "RCTLog.h"
 
 @implementation RNMail
 {
@@ -99,6 +97,8 @@ RCT_EXPORT_METHOD(mail:(NSDictionary *)options
                 mimeType = @"text/vcard";
             } else if ([attachmentType isEqualToString:@"json"]) {
                 mimeType = @"application/json";
+            } else if ([attachmentType isEqualToString:@"plaintext"]) {
+                mimeType = @"text/plain";
             }
 
             // Add attachment
